@@ -1,0 +1,62 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+view,
+page,
+navigator,
+button,
+swiper,
+swiper-item {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+page {
+	background-color: #f2f2f2;
+}
+
+
+
