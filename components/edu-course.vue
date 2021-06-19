@@ -68,7 +68,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import '@/static/assets/fonts/iconfont.wxss';
+	 @import "../static/assets/fonts/iconfont.css";
 
 	.course-item {
 		width: 100%;
