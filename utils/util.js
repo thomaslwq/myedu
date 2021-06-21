@@ -28,28 +28,28 @@ const durationForHuman = duration => {
 }
 
 const loginCheck = () => {
-  if (!uni.getStorageSync('access_token')) {
-    uni.navigateTo({
-      url: '/pages/auth/login',
+  if (!wx.getStorageSync('access_token')) {
+    wx.navigateTo({
+      url: '/pages/auth/auth',
     })
   }
 }
 
 const go = (page, auth = false) => {
-  if (auth && !uni.getStorageSync('access_token')) {
-    uni.navigateTo({
-      url: '/pages/auth/login?redirect=' + encodeURIComponent(page),
+  if (auth && !wx.getStorageSync('access_token')) {
+    wx.navigateTo({
+      url: '/pages/auth/auth?redirect=' + encodeURIComponent(page),
     })
     return
   }
 
-  uni.navigateTo({
+  wx.navigateTo({
     url: page,
   })
 }
 
 const isIos = () => {
-  let info = uni.getSystemInfoSync();
+  let info = wx.getSystemInfoSync();
   return info.platform === 'ios';
 }
 
