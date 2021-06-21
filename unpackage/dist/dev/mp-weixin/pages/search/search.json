@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "搜索",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "edu-course": "/components/edu-course",
-    "edu-none": "/components/edu-none"
-  }
-}
