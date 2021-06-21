@@ -18,7 +18,7 @@ export function sliders() {
 
 export function search(params) {
   return instance({
-      url: '/api/v2/search',
+      url: '/search',
       data: params
   })
 }
