@@ -51,13 +51,55 @@
             }
             
         }
+        ,{
+            "path" : "pages/course/list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/member/home",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
+	
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "知识付费小程序",
 		"navigationBarBackgroundColor": "#fff",
 		"backgroundColor": "#F8F8F8"
 	},
+	 "tabBar": {
+		 "selectedColor":"#808080",
+	    "list": [
+	      {
+	        "pagePath": "pages/index/index",
+	        "text": "首页",
+			"iconPath":"static/images/icons/home.png",
+			"selectedIconPath":"static/images/icons/home-active.png"
+	      },
+	      {
+	        "pagePath": "pages/course/list",
+	        "text": "课程",
+			"iconPath":"static/images/icons/course.png",
+			"selectedIconPath":"static/images/icons/course-active.png"
+	      },
+	      {
+	        "pagePath": "pages/member/home",
+	        "text": "我的",
+			"iconPath":"static/images/icons/user.png",
+			"selectedIconPath":"static/images/icons/user-active.png"
+	      }
+	    ]
+	  },
 	"condition": { //模式配置，仅开发期间生效
 	    "current": 0, //当前激活的模式（list 的索引项）
 	    "list": [{
