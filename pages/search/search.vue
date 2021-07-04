@@ -11,7 +11,7 @@
 		<view class="search-result">
 			<view class="title">搜索结果</view>
 			<view class="result" v-if="courses.length">
-				<edu-course :name="course.title" :thumb="course.thumb" :id="course.id" :charge="course.charge"
+				<edu-course :name="course.title" :thumb="course.thumb" :course_id="course.id" :charge="course.charge"
 					:user-count="course.user_count" :category="course.category.name" v-for="(course,index) in courses"
 					:key="course.id"></edu-course>
 			</view>

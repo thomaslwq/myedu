@@ -47,7 +47,7 @@
 				type: Number,
 				value: 0,
 			},
-			id: {
+			course_id: {
 				type: Number,
 				value: 0,
 			}
@@ -60,7 +60,7 @@
 		methods: {
 			goDetail() {
 				uni.navigateTo({
-					url: '/pages/course/detail?id=' + this.id,
+					url: '/pages/course/detail?id=' + this.course_id,
 				})
 			}
 		}

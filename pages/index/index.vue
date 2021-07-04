@@ -24,7 +24,7 @@
 			<view class="index-banner-item" v-for="(banner,index) in banners"  :key="course.id">
 				<view class="title">{{banner.name}}</view>
 				<view class="courses-box">
-					<edu-course :name="course.title" :thumb="course.thumb" :id="course.id" :charge="course.charge"
+					<edu-course :name="course.title" :thumb="course.thumb" :course_id="course.id" :charge="course.charge"
 						:user-count="course.user_count" :category="course.category.name" v-for="(course,i) in banner.courses"
 						:key="course.id"></edu-course>
 				</view>
