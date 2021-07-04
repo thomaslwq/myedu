@@ -39,7 +39,8 @@
 		home
 	} from '@/api/index.js'
 	import EduCourse from "@/components/edu-course.vue"
-	
+	const app = getApp();
+	// console.log(app.globalData)
 	export default {
 		components:{
 			"edu-course":EduCourse

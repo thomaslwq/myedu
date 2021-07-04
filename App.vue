@@ -44,7 +44,8 @@
 
 <style>
 	/*每个页面公共css */
-
+	/* @import '../../assets/fonts/iconfont.wxss'; */
+   @import url("@/static/assets/fonts/iconfont.css");
 	/*  #ifdef  MP-WEIXIN  */
 	view,
 	page,

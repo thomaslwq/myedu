@@ -109,13 +109,13 @@
 
 			openUserProtocol() {
 				wx.navigateTo({
-					url: '/pages/common/web?url=' + app.globalData.user_protocol,
+					url: '/pages/web/web?url=' + app.globalData.user_protocol,
 				})
 			},
 
 			openUserPrivateProtocol() {
 				wx.navigateTo({
-					url: '/pages/common/web?url=' + app.globalData.user_private_protocol,
+					url: '/pages/web/web?url=' + app.globalData.user_private_protocol,
 				})
 			},
 		}
