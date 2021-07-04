@@ -15,15 +15,15 @@
 				console.log(this.globalData)
 			})
 			// 小程序 seesion
-			// uni.login({
-			// 	success: (res) => {
-			// 		base.wxLogin({
-			// 			code: res.code
-			// 		}).then(res => {
-			// 			uni.setStorageSync("openid", res.openid);
-			// 		})
-			// 	}
-			// })
+			uni.login({
+				success: (res) => {
+					base.wxLogin({
+						code: res.code
+					}).then(res => {
+						uni.setStorageSync("openid", res.openid);
+					})
+				}
+			})
 		},
 		onShow: function() {
 			console.log('App Show')

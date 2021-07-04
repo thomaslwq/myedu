@@ -69,6 +69,69 @@
             }
             
         }
+        ,{
+            "path" : "pages/member/order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/member/collect",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/member/message",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/member/course",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/member/promoCode",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/member/credit1",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/member/setting",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	
 	"globalStyle": {
@@ -111,7 +174,17 @@
 			        "name": "课程列表", //模式名称
 			        "path": "pages/course/list", //启动页面，必选
 			        "query": "id=1" //启动参数，在页面的onLoad函数里面得到。
-			    }
+			    },
+				{
+				        "name": "我的", //模式名称
+				        "path": "pages/member/home", //启动页面，必选
+				        "query": "id=1" //启动参数，在页面的onLoad函数里面得到。
+				    },
+					{
+					        "name": "授权页面", //模式名称
+					        "path": "pages/auth/auth", //启动页面，必选
+					        "query": "id=1" //启动参数，在页面的onLoad函数里面得到。
+					    }
 	    ]
 	}
 }
