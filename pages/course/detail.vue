@@ -74,7 +74,7 @@
 			</view>
 			<view class="buttons">
 				<block v-if="course.charge === 0 || isBuy === true">
-					<text class="start-learn-button" bindtap="startLearn">开始学习</text>
+					<text class="start-learn-button" @click="startLearn">开始学习</text>
 				</block>
 				<block v-else>
 					<block v-if="isIos">
@@ -261,7 +261,7 @@
 			goVideo(e) {
 				let videoId = e.currentTarget.dataset.videoId;
 				console.log(videoId);
-				util.go('/pages/vedio/video?id=' + videoId, true);
+				util.go('/pages/course/video?id=' + videoId, true);
 			},
 
 			buy() {
@@ -270,7 +270,7 @@
 			},
 
 			startLearn() {
-				if (this.data.videos.length === 0) {
+				if (this.videos.length === 0) {
 					wx.showToast({
 						icon: 'none',
 						title: '暂无视频',
@@ -280,12 +280,12 @@
 
 				let video = null;
 
-				if (this.data.chapters.length > 0) {
+				if (this.chapters.length > 0) {
 					// 有配置章节
-					video = this.data.videos[this.data.chapters[0].id][0];
+					video = this.videos[this.chapters[0].id][0];
 				} else {
 					// 无章节
-					video = this.data.videos[0][0];
+					video = this.videos[0][0];
 				}
 
 				util.go('/pages/course/video?id=' + video.id, true);

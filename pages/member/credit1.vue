@@ -67,45 +67,48 @@
 		onReachBottom: function() {
 			this.loadMore();
 		},
-		getUser() {
-			user.info().then(res => {
-
-				this.credit1 = res.credit1
-
-			})
-		},
-
-		getData(reset = false) {
-			if (reset) {
-				this.pagination.page = 1;
-				this.pagination.is_over = false;
-				this.records = [];
-			}
-			if (this.pagination.is_over) {
-				return;
-			}
-			user.credit1Records(this.pagination).then(res => {
-				let data = res.data;
-				if (data.length === 0) {
-					this.pagination.is_over =  true;
-				} else {
-					let list = this.data.records;
-					list.push(...data);
-					this.records =  list;
-				}
-
+		methods:{
+			getUser() {
+				user.info().then(res => {
+			
+					this.credit1 = res.credit1
+			
+				})
+			},
+			
+			getData(reset = false) {
 				if (reset) {
-					uni.stopPullDownRefresh();
+					this.pagination.page = 1;
+					this.pagination.is_over = false;
+					this.records = [];
 				}
-			})
-		},
-
-		loadMore() {
-			if (this.pagination.is_over) {
-				return;
+				if (this.pagination.is_over) {
+					return;
+				}
+				user.credit1Records(this.pagination).then(res => {
+					let data = res.data;
+					if (data.length === 0) {
+						this.pagination.is_over =  true;
+					} else {
+						let list = this.data.records;
+						list.push(...data);
+						this.records =  list;
+					}
+			
+					if (reset) {
+						uni.stopPullDownRefresh();
+					}
+				})
+			},
+			
+			loadMore() {
+				if (this.pagination.is_over) {
+					return;
+				}
+				this.pagination.page =  this.pagination.page + 1;
+				this.getData();
 			}
-			this.pagination.page =  this.pagination.page + 1;
-			this.getData();
+				
 		}
 	}
 </script>
