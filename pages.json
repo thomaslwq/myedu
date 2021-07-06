@@ -154,7 +154,7 @@
             "path" : "pages/member/ib_withdraw",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "邀请余额提现",
                 "enablePullDownRefresh": false
             }
             
