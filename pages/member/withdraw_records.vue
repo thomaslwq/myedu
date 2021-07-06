@@ -1,17 +1,22 @@
 <template>
 	<view>
-		<view class="course-list">
-			<block v-if="courses.length > 0">
-				<meedu-course :name="course.title" :thumb="course.thumb" :charge="course.charge" :course_id="course.id"
-					:user-count="course.user_count" :category="course.category.name" v-for="(course,index) in courses"
-					:key="course.id"></meedu-course>
+		<view class="records-box">
+			<block v-if="records.length > 0">
+				<view class="item" v-for="(record,index) in records" :key="record.id">
+					<view class="content">
+						<view class="remark">{{record.status_text}}</view>
+						<view class="date">{{record.created_at}}</view>
+					</view>
+					<view class="sum">
+						￥{{record.total}}
+					</view>
+				</view>
 			</block>
 			<meedu-none v-else></meedu-none>
 		</view>
 	</view>
 </template>
 <script>
-	import EduCourse from "@/components/edu-course.vue"
 	import EduNone from "@/components/edu-none.vue"
 	import {
 		user
@@ -19,7 +24,6 @@
 
 	export default {
 		components: {
-			"meedu-course": EduCourse,
 			"meedu-none": EduNone
 		},
 		data() {
@@ -29,7 +33,7 @@
 					page_size: 8,
 					is_over: false
 				},
-				courses: []
+				records: []
 			};
 		},
 		/**
@@ -53,24 +57,23 @@
 		methods: {
 			getData(reset = false) {
 				if (reset) {
-					this.pagination.page == 1;
+					this.pagination.page = 1;
 					this.pagination.is_over = false;
-					this.courses = []
-
+					this.records = []
 				}
 				if (this.pagination.is_over) {
 					return;
 				}
-				user.collectionCourses(this.pagination).then(res => {
+				user.withdrawRecords(this.pagination).then(res => {
 					let data = res.data;
 					if (data.length === 0) {
-					    this.pagination.is_over= true;
-						
+						this.pagination.is_over = true;
 					} else {
-						let list = this.courses;
+						let list = this.records;
 						list.push(...data);
-						this.courses = list;
+						this.records = list;
 					}
+
 					if (reset) {
 						uni.stopPullDownRefresh();
 					}
@@ -81,7 +84,7 @@
 				if (this.pagination.is_over) {
 					return;
 				}
-				this.pagination.page = this.pagination.page + 1;
+				this.pagination.page = this.data.pagination.page + 1;
 				this.getData();
 			}
 		}
@@ -89,14 +92,57 @@
 </script>
 
 <style lang="scss">
+	.records-box {
+		width: 100%;
+		height: auto;
+		float: left;
+		background-color: white;
+	}
 
-.course-list {
-  width: 100%;
-  height: 100%;
-  float: left;
-  box-sizing: border-box;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: white;
-}
+	.records-box>.item {
+		width: 100%;
+		height: auto;
+		float: left;
+		box-sizing: border-box;
+		padding: 15px;
+		border-bottom: 1px solid #f2f2f2;
+		display: flex;
+	}
+
+	.records-box>.item>.content {
+		flex: 1;
+	}
+
+	.records-box>.item>.content>.remark {
+		width: 100%;
+		height: auto;
+		float: left;
+		font-size: 15px;
+		font-weight: 400;
+		color: rgba(51, 51, 51, 1);
+		line-height: 1;
+		margin-bottom: 15px;
+	}
+
+	.records-box>.item>.content>.date {
+		width: 100%;
+		height: auto;
+		float: left;
+		font-size: 12px;
+		font-weight: 400;
+		color: rgba(163, 163, 163, 1);
+		line-height: 1;
+	}
+
+	.records-box>.item>.sum {
+		margin-left: 10px;
+		font-size: 15px;
+		font-weight: 500;
+		color: #FF4D4F;
+		line-height: 1;
+	}
+
+	.records-box>.item>.sum.income {
+		color: green;
+	}
 </style>
