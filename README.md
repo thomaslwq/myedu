@@ -10,7 +10,7 @@
 #### 安装教程
 
 1. 下载 [HBuilder](https://www.dcloud.io/hbuilderx.html) 开发工具
-2. git clone https://gitee.com/thomaslwq/my-edu
+2. 下载代码包 https://ext.dcloud.net.cn/plugin?id=5551
 3. 导入到HBuilder 开发工具中
 
 #### 效果展示
